@@ -1,0 +1,12 @@
+@function isOfType($type, $object){
+    @if( getTypeOf($object) == $type ){
+        @return $object;
+    }
+    @else{
+        @error 'Object '#{getTypeOf($object)}' should be of type '#{$type};
+    }
+};
+
+@function getTypeOf($object){
+    @return map-get($object, 'type');
+}

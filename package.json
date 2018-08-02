@@ -1,0 +1,19 @@
+{
+  "name": "themebuilder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "sass ./src/api-test.scss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthieucolas/ThemeBuilder.git"
+  },
+  "author": "Matthieu Colas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matthieucolas/ThemeBuilder/issues"
+  },
+  "homepage": "https://github.com/matthieucolas/ThemeBuilder#readme"
+}
