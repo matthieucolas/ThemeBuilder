@@ -1,0 +1,30 @@
+
+
+@function test_getBackgroundColor($color-template, $expected){
+    $test: getBackgroundColor($color-template);
+    @return unitTest($test, $expected, "getBackgroundColor");
+}
+
+@function test_getForegroundColor($color-template, $expected){
+    $test: getForegroundColor($color-template);
+    @return unitTest($test, $expected, "getForegroundColor");
+}
+
+@function test_getBorderColor($color-template, $expected){
+    $test : getBorderColor($color-template);
+    @return unitTest($test, $expected, "getBorderColor");
+}
+
+@function test_getOutlineColor($color-template, $expected){
+    $test : getOutlineColor($color-template);
+    @return unitTest($test, $expected, "getOutlineColor");
+}
+
+$color-template : colorTemplate(red, green, blue, yellow);
+
+@debug '';
+@debug '-------------- colorTemplate unit tests -------------------';
+@debug test_getBackgroundColor($color-template, red);
+@debug test_getForegroundColor($color-template, green);
+@debug test_getBorderColor($color-template, blue);
+@debug test_getOutlineColor($color-template, yellow);

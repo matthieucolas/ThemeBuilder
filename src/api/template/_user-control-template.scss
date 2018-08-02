@@ -1,0 +1,25 @@
+@function userControlTemplate($base:null, $hover:null, $focus:null, $active:null){
+    @return (
+        'type':'userControlTemplate',
+        'base': typeCheck('colorTemplate', $base),
+        'hover':typeCheck('colorTemplate', $hover),
+        'focus':typeCheck('colorTemplate', $focus),
+        'active':typeCheck('colorTemplate', $active)
+    )
+};
+
+@function getBaseUserControlTemplate($control-template){
+    @return map-get(typeCheck('userControlTemplate', $control-template), 'base');
+}
+
+@function getHoverUserControlTemplate($control-template){
+    @return map-get(typeCheck('userControlTemplate', $control-template), 'hover');
+}
+
+@function getFocusUserControlTemplate($control-template){
+    @return map-get(typeCheck('userControlTemplate', $control-template), 'focus');
+}
+
+@function getActiveUserControlTemplate($control-template){
+    @return map-get(typeCheck('userControlTemplate', $control-template), 'active');
+}

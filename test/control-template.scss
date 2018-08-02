@@ -1,0 +1,57 @@
+@function test_getBaseUserControlTemplate($control-template, $expected){
+    $test : getBaseUserControlTemplate($control-template);
+
+    @if(isOfType('colorTemplate', $test) ){
+        @return unitTest($test, $expected, "getBaseUserControlTemplate");
+    }
+    @else{
+        @return "getBaseUserControlTemplate : failure";
+    }
+}
+
+@function test_getHoverUserControlTemplate($control-template, $expected){
+    $test : getHoverUserControlTemplate($control-template);
+
+    @if(isOfType('colorTemplate', $test)){
+        @return unitTest($test, $expected, "getHoverUserControlTemplate");
+    }
+    @else{
+        @return "getHoverUserControlTemplate : failure";
+    }
+}
+
+@function test_getFocusUserControlTemplate($control-template, $expected){
+    $test : getFocusUserControlTemplate($control-template);
+
+    @if(isOfType('colorTemplate', $test)){
+        @return unitTest($test, $expected, "getFocusUserControlTemplate");
+    }
+    @else{
+        @return "getFocusUserControlTemplate : failure";
+    }
+}
+
+@function test_getActiveUserControlTemplate($control-template, $expected){
+    $test : getActiveUserControlTemplate($control-template);
+
+    @if(isOfType('colorTemplate', $test)){
+        @return unitTest($test, $expected, "getActiveUserControlTemplate");
+    }
+    @else{
+        @return "getActiveUserControlTemplate : failure";
+    }
+}
+
+
+$base-color-template : colorTemplate(red, green, blue, yellow);
+$hover-color-template : colorTemplate(violet, pink, bisque, black);
+$focus-color-template : colorTemplate(orange, lightgreen, lightblue, lightpink);
+$active-color-template : $base-color-template;
+$control-template : userControlTemplate($base-color-template, $hover-color-template, $focus-color-template, $active-color-template);
+
+@debug '';
+@debug '-------------- userControlTemplate unit tests -------------------';
+@debug test_getBaseUserControlTemplate($control-template, $base-color-template);
+@debug test_getHoverUserControlTemplate($control-template, $hover-color-template);
+@debug test_getFocusUserControlTemplate($control-template, $focus-color-template);
+@debug test_getActiveUserControlTemplate($control-template, $active-color-template);

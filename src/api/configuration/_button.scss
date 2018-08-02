@@ -1,0 +1,8 @@
+@function getButtonMap($configuration, $button-map-key){
+    @return map-get(map-get($configuration, 'button'), $button-map-key);
+}
+
+@function getButtonVariant($configuration, $variant-key){
+    $button-variant : map-get(getButtonMap($configuration, 'normal'), $variant-key);
+    @return typeCheck('userControlTemplate', $button-variant);
+}

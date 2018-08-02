@@ -1,0 +1,23 @@
+
+@function test_isOfType($object, $type, $expected){
+    $test : isOfType($type, $object);
+    @return unitTest($test, $expected, 'isOfType should return #{$expected}');
+};
+
+@function test_getTypeOf($object, $expected){
+    $test : getTypeOf($object);
+    @return unitTest($test, $expected, 'getTypeOf should return #{$expected}');
+};
+
+@function test_typeCheck($object, $type, $expected){
+    $test : typeCheck($type, $object);
+    @return unitTest($test, $expected, 'typeCheck');
+};
+
+$object : ('type':'testType');
+
+@debug '';
+@debug '----------------- type unit tests ------------------';
+@debug test_isOfType($object, 'testType', true);
+@debug test_getTypeOf($object, 'testType');
+@debug test_typeCheck($object, 'testType', $object);

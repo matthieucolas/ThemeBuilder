@@ -1,0 +1,31 @@
+
+@import './src/api/core/type';
+@import './src/api/template/control-template';
+@import './src/api/template/color-template';
+@import './src/api/configuration/button';
+
+$color-template : colorTemplate(red, green, blue, yellow);
+$default-variant : userControlTemplate($color-template);
+$normal-map : ('default': $default-variant);
+$theme : (
+
+    button: (
+        normal: $normal-map
+    )
+);
+
+
+@mixin test_button($config){
+    
+    $default : getButtonVariant($config, 'default');
+    $base:getBaseUserControlTemplate($default);
+    $background : getBackgroundColor($base);
+
+    .button{
+        &--default{
+            background-color: $background;
+        }
+    }
+}
+
+@include test_button($theme);

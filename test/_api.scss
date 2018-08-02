@@ -1,0 +1,8 @@
+@function unitTest($test, $expected, $test-name) {
+    @if($test == $expected){
+        @return '#{$test-name} : success';
+    }
+    @else{
+        @return '****** #{$test-name} : FAILED ! *******';
+    }
+}

@@ -1,7 +1,0 @@
-@function colorTemplate($background, $foreground: null, $border: null, $outline:null) {
-    @return ( 'type':'colorTemplate',
-              'background':   $background,
-              'foreground':   $foreground,
-              'border':       $border,
-              'outline':      $outline);
-}

@@ -18,4 +18,4 @@
 
 @function getTypeOf($object){
     @return map-get($object, 'type');
-}
+};

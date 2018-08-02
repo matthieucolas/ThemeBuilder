@@ -1,0 +1,23 @@
+@function colorTemplate($background, $foreground: null, $border: null, $outline:null) {
+    @return ( 'type':'colorTemplate',
+              'background':   $background,
+              'foreground':   $foreground,
+              'border':       $border,
+              'outline':      $outline);
+}
+
+@function getBackgroundColor($colorTemplate){
+    @return map-get($colorTemplate, 'background');
+}
+
+@function getForegroundColor($colorTemplate){
+    @return map-get($colorTemplate, 'foreground');
+}
+
+@function getBorderColor($colorTemplate){
+    @return map-get($colorTemplate, 'border');
+}
+
+@function getOutlineColor($colorTemplate){
+    @return map-get($colorTemplate, 'outline');
+}
