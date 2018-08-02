@@ -2,9 +2,9 @@
 @import './src/api/core/type';
 @import './src/api/template/user-control-template';
 @import './src/api/template/color-template';
-@import './src/api/template/partials';
 @import './src/api/configuration/button';
 @import './src/api/configuration/theme';
+@import './src/partials/template';
 
 $color-template : colorTemplate(red, green, blue, yellow);
 $primary-template : colorTemplate(green, violet, cyan, yellow);
@@ -45,6 +45,7 @@ $theme : (
     }
 
     .toggle-button{
+        
         $default: getToggleButtonVariant($config, 'default');
         $base: getBaseUserControlTemplate($default);     
         

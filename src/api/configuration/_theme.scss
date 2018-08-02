@@ -4,13 +4,6 @@ $theme-map-types:(
     'button'
 );
 
-@function themeConfiguration($buttons:null, $menus, $forms:null, $panels, $color-palettes){
-    @return (
-        'type':'themeConfiguration',
-        'buttons':typeCheck('buttonConfiguration', $buttons)
-    )
-};
-
 /// gets button mapping nested into a configuration object
 /// @param {Array} $configuration 
 
@@ -27,6 +20,6 @@ $theme-map-types:(
         @return $key;
     }
     @else{
-        @error 'map type '#{$key}' does not exists !'
+        @error 'map type #{$key} does not exists !'
     }
 };
