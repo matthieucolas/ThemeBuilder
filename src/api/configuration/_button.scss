@@ -14,11 +14,19 @@ $button-map-types:(
     @return map-get($map, _checkMapTypeExists($button-map-key, $button-map-types));
 };
 
+/// returns a visual variant nested in button / normal configuration mapping
+/// @param {Array} $configuration 
+/// @param {String} $variant-key 
+
 @function getNormalButtonVariant($configuration, $variant-key){
     $map: _getButtonMap($configuration,  'normal');
     $button-variant : map-get($map, $variant-key);
     @return typeCheck('userControlTemplate', $button-variant);
 };
+
+/// returns a visual variant nested into button / toggle configuration mapping 
+/// @param {*} $configuration 
+/// @param {*} $variant-key 
 
 @function getToggleButtonVariant($configuration, $variant-key){
     $button-variant : map-get(_getButtonMap($configuration, 'toggle'), $variant-key);

@@ -1,7 +1,8 @@
+/// @group API/Configuration
+
 $theme-map-types:(
     'button'
 );
-
 
 @function themeConfiguration($buttons:null, $menus, $forms:null, $panels, $color-palettes){
     @return (
@@ -10,9 +11,16 @@ $theme-map-types:(
     )
 };
 
+/// gets button mapping nested into a configuration object
+/// @param {Array} $configuration 
+
 @function _getButtonConfiguration($configuration){
     @return map-get($configuration, _checkMapTypeExists('button', $theme-map-types));
 };
+
+/// checks whether a map key exists  
+/// @param {String} $key 
+/// @param {Array} $map-types 
 
 @function _checkMapTypeExists($key, $map-types){
     @if( index($map-types, $key)!= null){
