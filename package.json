@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "sass ./src/api-test.scss"
+    "test": "sass ./api-test.scss"
   },
   "repository": {
     "type": "git",

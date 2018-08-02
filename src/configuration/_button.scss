@@ -1,0 +1,9 @@
+@function _getButtonsConfigurations($configuration, $button-type){
+    @return map-get(map-get($configuration, 'button'), $button-type);
+}
+
+@function getButtonVariant($configuration, $variant){
+    $button-variant : map-get(_getButtonsConfigurations($configuration, 'default'), $variant);
+    //@return typeCheck('controlTemplate', $button-variant);
+    @return $button-variant;
+}

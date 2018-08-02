@@ -1,0 +1,9 @@
+@function controlTemplate($base:null, $hover:null, $focus:null, $active:null){
+    @return (
+        'type':'controlTemplate',
+        'base': typeCheck('colorTemplate', $base),
+        'hover':typeCheck('colorTemplate', $hover),
+        'focus':typeCheck('colorTemplate', $focus),
+        'active':typeCheck('colorTemplate', $active)
+    )
+};

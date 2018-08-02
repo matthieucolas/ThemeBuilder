@@ -1,10 +1,19 @@
-@function isOfType($type, $object){
-    @if( getTypeOf($object) == $type ){
-        @return $object;
+@function typeCheck($type, $object){
+    @if($object != null){
+        @if( getTypeOf($object) == $type ){
+            @return $object;
+        }
+        @else{
+            @error "Object "#{getTypeOf($object)}" should be of type "#{$type};
+        }
     }
     @else{
-        @error 'Object '#{getTypeOf($object)}' should be of type '#{$type};
+        @return $object;
     }
+};
+
+@function isOfType($type, $object){
+    @return ( getTypeOf($object) == $type );
 };
 
 @function getTypeOf($object){

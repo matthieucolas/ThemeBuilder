@@ -1,0 +1,25 @@
+@import './src/core/type';
+@import './src/template/control-template';
+@import './src/template/color-template';
+@import './src/configuration/button';
+
+@warn 'testing object types :';
+
+$control-definition : controlTemplate();
+$color-template: colorTemplate(red, green, blue);
+
+@warn getTypeOf($control-definition);
+@warn getTypeOf($color-template);
+@warn isOfType('colorTemplate', $color-template);
+
+// should throw a type error
+$typetest : typeCheck('colorTemplate', $color-template);
+
+
+$theme : (
+    button: (
+        normal: (
+            'default':controlTemplate()
+        )
+    )
+);
