@@ -1,0 +1,24 @@
+$theme-map-types:(
+    'button'
+);
+
+
+@function themeConfiguration($buttons:null, $menus, $forms:null, $panels, $color-palettes){
+    @return (
+        'type':'themeConfiguration',
+        'buttons':typeCheck('buttonConfiguration', $buttons)
+    )
+};
+
+@function _getButtonConfiguration($configuration){
+    @return map-get($configuration, _checkMapTypeExists('button', $theme-map-types));
+};
+
+@function _checkMapTypeExists($key, $map-types){
+    @if( index($map-types, $key)!= null){
+        @return $key;
+    }
+    @else{
+        @error 'map type '#{$key}' does not exists !'
+    }
+};

@@ -1,8 +1,26 @@
-@function getButtonMap($configuration, $button-map-key){
-    @return map-get(map-get($configuration, 'button'), $button-map-key);
-}
+///@group API/configuration
 
-@function getButtonVariant($configuration, $variant-key){
-    $button-variant : map-get(getButtonMap($configuration, 'normal'), $variant-key);
+$button-map-types:(
+    'normal',
+    'toggle'
+);
+
+/// returns the map object of a button type.
+/// @param {Array} $configuration 
+/// @param {String} $button-map-key 
+
+@function _getButtonMap($configuration, $button-map-key){
+    $map: _getButtonConfiguration($configuration);
+    @return map-get($map, _checkMapTypeExists($button-map-key, $button-map-types));
+};
+
+@function getNormalButtonVariant($configuration, $variant-key){
+    $map: _getButtonMap($configuration,  'normal');
+    $button-variant : map-get($map, $variant-key);
     @return typeCheck('userControlTemplate', $button-variant);
-}
+};
+
+@function getToggleButtonVariant($configuration, $variant-key){
+    $button-variant : map-get(_getButtonMap($configuration, 'toggle'), $variant-key);
+    @return typeCheck('userControlTemplate', $button-variant);
+};

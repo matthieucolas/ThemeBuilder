@@ -1,22 +1,38 @@
-@function test_getButtonMap($config, $button-type, $expected){
-    $test : getButtonMap($config, $button-type);
-    @return unitTest($test, $expected, 'getButtonMap');
-}
+@function test__getButtonMap($config, $button-type, $expected){
+    $test : _getButtonMap($config, $button-type);
+    @return unitTest($test, $expected, '_getButtonMap');
+};
 
-@function test_getButtonVariant($config, $variant-key, $expected){
-    $test : getButtonVariant($config, $variant-key);
-    @return unitTest($test, $expected, 'getButtonVariant');
-}
+@function test_getNormalButtonVariant($config, $variant-key, $expected){
+    $test : getNormalButtonVariant($config, $variant-key);
+    @return unitTest($test, $expected, 'getNormalButtonVariant');
+};
+
+@function test_getToggleButtonVariant($config, $variant-key, $expected){
+    $test : getToggleButtonVariant($config, $variant-key);
+    @return unitTest($test, $expected, 'getToggleButtonVariant');
+};
 
 $default-variant : userControlTemplate($color-template);
-$normal-map : ('default': $default-variant);
+$normal-map : (
+    'default':$default-variant,
+    'primary':$default-variant
+);
+$toggle-map: (
+    'default':$default-variant,
+    'primary':$default-variant
+);
 $config : (
-    button: (
-        normal: $normal-map
+    'button': (
+        'normal': $normal-map,
+        'toggle': $toggle-map
     )
 );
 
 @debug '';
 @debug '--------------- button map access unit test ----------------------';
-@debug test_getButtonMap($config, 'normal', $normal-map);
-@debug test_getButtonVariant($config, 'default', $default-variant);
+@debug test__getButtonMap($config, 'normal', $normal-map);
+@debug output('default', test_getNormalButtonVariant($config, 'default', $default-variant));
+@debug output('primary',test_getNormalButtonVariant($config, 'primary', $default-variant));
+@debug output('default', test_getToggleButtonVariant($config, 'default', $default-variant));
+@debug output('primary',test_getToggleButtonVariant($config, 'primary', $default-variant));

@@ -1,0 +1,22 @@
+@function test__checkMapTypeExists($key, $map-types, $expected){
+    $test : _checkMapTypeExists($key, $map-types);
+    @return unitTest($test, $expected, 'checkMapTypeExists');
+}
+
+@function test__getButtonConfiguration($configuration, $expected){
+    $test : _getButtonConfiguration($configuration);
+    @return unitTest($test, $expected, '_getButtonConfiguration');
+}
+
+$map-types:(
+    'type1',
+    'type2'
+);
+$theme : (
+    'button': ('buttonmap')
+);
+@debug '';
+@debug '-------------------- theme configuration unit tests -------------------';
+@debug test__checkMapTypeExists('type1', $map-types, 'type1');
+@debug test__checkMapTypeExists('type2', $map-types, 'type2');
+@debug test__getButtonConfiguration($theme, ('buttonmap'));

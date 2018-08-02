@@ -1,31 +1,59 @@
 
 @import './src/api/core/type';
-@import './src/api/template/control-template';
+@import './src/api/template/user-control-template';
 @import './src/api/template/color-template';
+@import './src/api/template/partials';
 @import './src/api/configuration/button';
+@import './src/api/configuration/theme';
 
 $color-template : colorTemplate(red, green, blue, yellow);
+$primary-template : colorTemplate(green, violet, cyan, yellow);
 $default-variant : userControlTemplate($color-template);
-$normal-map : ('default': $default-variant);
+$primary-variant : userControlTemplate($primary-template);
+$normal-map : ( 
+    'default': $default-variant,
+    'primary': $primary-variant
+);
+$toggle-map: ('default': $default-variant);
 $theme : (
-
-    button: (
-        normal: $normal-map
+    'button': (
+        'normal': ( 
+            'default': $default-variant,
+            'primary': $primary-variant
+        ),
+        'toggle': $toggle-map
     )
 );
 
+   
 
-@mixin test_button($config){
-    
-    $default : getButtonVariant($config, 'default');
-    $base:getBaseUserControlTemplate($default);
-    $background : getBackgroundColor($base);
+@mixin button_rule($config){
 
-    .button{
+    .normal-button{
+        
         &--default{
-            background-color: $background;
+            $default: getNormalButtonVariant($config, 'default');
+            $base: getBaseUserControlTemplate($default);
+            @include colorTemplateBasics($base);
+        }
+
+        &--primary{
+            $primary: getNormalButtonVariant($config, 'primary');
+            $base: getBaseUserControlTemplate($primary);
+            @include colorTemplateBasics($base);
         }
     }
-}
 
-@include test_button($theme);
+    .toggle-button{
+        $default: getToggleButtonVariant($config, 'default');
+        $base: getBaseUserControlTemplate($default);     
+        
+        &--default{
+            @include colorTemplateBasics($base);
+        }
+    }
+
+    @debug 'button_rule >>> passed';
+};
+
+@include button_rule($theme);

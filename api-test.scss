@@ -3,6 +3,7 @@
 @import './src/api/template/user-control-template';
 @import './src/api/template/color-template';
 @import './src/api/configuration/button';
+@import './src/api/configuration/theme';
 
 
 @debug '------------------------ START API UNIT TESTS ----------------------------';
@@ -10,5 +11,6 @@
 @import 'test/color-template';
 @import 'test/control-template';
 @import 'test/buttons';
+@import 'test/theme';
 @debug '-------------------------------- END ----------------------------';
 

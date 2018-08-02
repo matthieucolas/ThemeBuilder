@@ -4,7 +4,7 @@
             @return $object;
         }
         @else{
-            @error "Object "#{getTypeOf($object)}" should be of type "#{$type};
+            @error "Object #{getTypeOf($object)} should be of type #{$type}";
         }
     }
     @else{

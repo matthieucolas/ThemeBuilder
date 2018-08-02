@@ -1,0 +1,15 @@
+@mixin colorTemplateBasics($color-template){
+    $background: getBackgroundColor($color-template);
+    $color: getForegroundColor($color-template);
+    $border-color:getBorderColor($color-template);
+
+    @include _colorBasic('background-color', $background);
+    @include _colorBasic('color', $color);
+    @include _colorBasic('border-color', $border-color);
+};
+
+@mixin _colorBasic($property-name, $color){
+    @if($color != null){
+        #{$property-name}:$color;
+    };
+};

@@ -1,8 +1,11 @@
 @function unitTest($test, $expected, $test-name) {
     @if($test == $expected){
-        @return '#{$test-name} : success';
+        @return '#{$test-name} >>> success';
     }
     @else{
-        @return '****** #{$test-name} : FAILED ! *******';
+        @return '****** #{$test-name} >>> FAILED ! *******';
     }
+}
+@function output($console-output, $test-function){
+    @return '#{$console-output} : #{$test-function}'
 }
