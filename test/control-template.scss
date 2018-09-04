@@ -50,7 +50,7 @@ $active-color-template : $base-color-template;
 $control-template : userControlTemplate($base-color-template, $hover-color-template, $focus-color-template, $active-color-template);
 
 @debug '';
-@debug '-------------- userControlTemplate unit tests -------------------';
+@debug '== userControlTemplate unit tests =================================================';
 @debug test_getBaseUserControlTemplate($control-template, $base-color-template);
 @debug test_getHoverUserControlTemplate($control-template, $hover-color-template);
 @debug test_getFocusUserControlTemplate($control-template, $focus-color-template);

@@ -1,12 +1,19 @@
+/// Creates the basic color properties for any kind of class
+/// @param {colortemplate} $color-template 
+
 @mixin colorTemplateBasics($color-template){
-    $background: getBackgroundColor($color-template);
-    $color: getForegroundColor($color-template);
-    $border-color:getBorderColor($color-template);
+    $background: getBackgroundColor(typeCheck($color-template));
+    $color: getForegroundColor(typeCheck($color-template));
+    $border-color:getBorderColor(typeCheck($color-template));
 
     @include _colorBasic('background-color', $background);
     @include _colorBasic('color', $color);
     @include _colorBasic('border-color', $border-color);
 };
+
+/// creates a color property based on property-name parameter
+/// @param {*} $property-name 
+/// @param {*} $color 
 
 @mixin _colorBasic($property-name, $color){
     @if($color != null){

@@ -1,0 +1,33 @@
+/// Checks whether an object is of required type, returns it unchanged if so, 
+/// throws an error if it's not
+/// @param {string} $type required type
+/// @param {*} $object object to test
+
+@function typeCheck($type, $object){
+    @if($object != null){
+        @if( isOfType($type, $object)){
+            @return $object;
+        }
+        @else{
+            @error "Object #{getTypeOf($object)} should be of type #{$type}";
+        }
+    }
+    @else{
+        @return $object;
+    }
+};
+
+/// Checks whether an object is of required type
+/// @param {string} $type the required type 
+/// @param {*} $object the object to text
+
+@function isOfType($type, $object){
+    @return ( getTypeOf($object) == $type );
+};
+
+/// Returns the type of an object
+/// @param {*} $object the object to get the type from
+
+@function getTypeOf($object){
+    @return map-get($object, 'type');
+};

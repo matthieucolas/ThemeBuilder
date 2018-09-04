@@ -1,25 +1,31 @@
-/// @group API/Configuration
-
 $theme-map-types:(
-    'button'
+    'user-control',
+    'panel',
+    'menu'
 );
 
-/// gets button mapping nested into a configuration object
-/// @param {Array} $configuration 
+$user-controls-map-types:(
+    'button',
+    'toggle-button',
+    'radio-button',
+    'checkbox',
+    'input'
+);
 
-@function _getButtonConfiguration($configuration){
-    @return map-get($configuration, _checkMapTypeExists('button', $theme-map-types));
-};
 
-/// checks whether a map key exists  
+/// Checks whether a mapping key exists  
 /// @param {String} $key 
 /// @param {Array} $map-types 
 
 @function _checkMapTypeExists($key, $map-types){
-    @if( index($map-types, $key)!= null){
+    @if(index($map-types, $key)!= null){
         @return $key;
     }
     @else{
         @error 'map type #{$key} does not exists !'
     }
 };
+
+@function getUserControlMapping($theme-configuration){
+    @return map-get($theme-configuration, 'user-control');
+}

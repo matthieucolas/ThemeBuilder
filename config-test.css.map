@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAiCQ,uBAAU;ECrBV,gBAAiB,EAXR,GAAmC;EAW5C,KAAiB,EAVb,KAAmC;EAUvC,YAAiB,EATP,IAA+B;ADoCzC,uBAAU;EC3BV,gBAAiB,EAXR,KAAmC;EAW5C,KAAiB,EAVb,MAAmC;EAUvC,YAAiB,EATP,IAA+B;;AD+CzC,uBAAU;ECtCV,gBAAiB,EAXR,GAAmC;EAW5C,KAAiB,EAVb,KAAmC;EAUvC,YAAiB,EATP,IAA+B",
-"sources": ["config-test.scss","src/partials/_template.scss"],
-"names": [],
-"file": "config-test.css"
-}

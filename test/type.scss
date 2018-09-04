@@ -4,6 +4,7 @@
     @return unitTest($test, $expected, 'isOfType should return #{$expected}');
 };
 
+
 @function test_getTypeOf($object, $expected){
     $test : getTypeOf($object);
     @return unitTest($test, $expected, 'getTypeOf should return #{$expected}');
@@ -17,7 +18,8 @@
 $object : ('type':'testType');
 
 @debug '';
-@debug '----------------- type unit tests ------------------';
+@debug '== type unit tests ==========================================';
 @debug test_isOfType($object, 'testType', true);
+@debug test_isOfType($object, 'wrongTestType', false);
 @debug test_getTypeOf($object, 'testType');
 @debug test_typeCheck($object, 'testType', $object);

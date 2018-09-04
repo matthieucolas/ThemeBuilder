@@ -1,0 +1,6 @@
+/// gets toggle-button mapping nested into a configuration object
+/// @param {Array} $configuration 
+
+@function _getToggleButtonConfiguration($configuration){
+    @return map-get($configuration, _checkMapTypeExists('toggle-button', $user-controls-map-types));
+};

@@ -23,7 +23,7 @@
 $color-template : colorTemplate(red, green, blue, yellow);
 
 @debug '';
-@debug '-------------- colorTemplate unit tests -------------------';
+@debug '== colorTemplate unit tests =========================================';
 @debug test_getBackgroundColor($color-template, red);
 @debug test_getForegroundColor($color-template, green);
 @debug test_getBorderColor($color-template, blue);

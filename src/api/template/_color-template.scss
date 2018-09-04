@@ -1,3 +1,10 @@
+/// Creates a color mapping that is going to be used as a template for
+/// userControls styles 
+/// @param {*} $background 
+/// @param {*} $foreground [null] 
+/// @param {*} $border [null] 
+/// @param {*} $outline [null] 
+
 @function colorTemplate($background, $foreground: null, $border: null, $outline:null) {
     @return ( 'type':'colorTemplate',
               'background':   $background,
@@ -6,17 +13,29 @@
               'outline':      $outline);
 }
 
+/// Returns the background value of the colorTemplate mapping passed as a parameter 
+/// @param {colorTemplate} $colorTemplate 
+
 @function getBackgroundColor($colorTemplate){
     @return map-get($colorTemplate, 'background');
 }
+
+/// Returns the foreground value of the colorTemplate mapping passed as a parameter 
+/// @param {colorTemplate} $colorTemplate 
 
 @function getForegroundColor($colorTemplate){
     @return map-get($colorTemplate, 'foreground');
 }
 
+/// Returns the borderColor value of the colorTemplate mapping passed as a parameter 
+/// @param {colorTemplate} $colorTemplate 
+
 @function getBorderColor($colorTemplate){
     @return map-get($colorTemplate, 'border');
 }
+
+/// Returns the outline value of the colorTemplate mapping passed as a parameter 
+/// @param {colorTemplate} $colorTemplate 
 
 @function getOutlineColor($colorTemplate){
     @return map-get($colorTemplate, 'outline');

@@ -3,20 +3,22 @@
     @return unitTest($test, $expected, 'checkMapTypeExists');
 }
 
-@function test__getButtonConfiguration($configuration, $expected){
-    $test : _getButtonConfiguration($configuration);
-    @return unitTest($test, $expected, '_getButtonConfiguration');
+@function test_getUserControlMapping($config, $expected){
+    $test : getUserControlMapping($config);
+    @return unitTest($test, $expected, 'getUserControlMapping');
 }
 
 $map-types:(
     'type1',
     'type2'
 );
-$theme : (
-    'button': ('buttonmap')
+$test:(
+    'user-control':'salut'
 );
+
+
 @debug '';
-@debug '-------------------- theme configuration unit tests -------------------';
+@debug '== theme configuration unit tests ==============================================';
 @debug test__checkMapTypeExists('type1', $map-types, 'type1');
 @debug test__checkMapTypeExists('type2', $map-types, 'type2');
-@debug test__getButtonConfiguration($theme, ('buttonmap'));
+@debug test_getUserControlMapping($test, 'salut');
