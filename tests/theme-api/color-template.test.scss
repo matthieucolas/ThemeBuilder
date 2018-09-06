@@ -1,4 +1,5 @@
-
+@import '../unit-test';
+@import '../../src/theme-api/core/color-template';
 
 @function test_getBackgroundColor($color-template, $expected){
     $test: getBackgroundColor($color-template);

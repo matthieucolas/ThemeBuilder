@@ -1,4 +1,7 @@
 
+@import '../unit-test';
+@import '../../src/theme-api/core/common';
+
 @function test_isOfType($object, $type, $expected){
     $test : isOfType($type, $object);
     @return unitTest($test, $expected, 'isOfType should return #{$expected}');

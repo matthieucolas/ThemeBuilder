@@ -1,45 +1,24 @@
+@import '../unit-test';
+@import '../../src/theme-api/core/user-control-template';
+
 @function test_getBaseUserControlTemplate($control-template, $expected){
     $test : getBaseUserControlTemplate($control-template);
-
-    @if(isOfType('colorTemplate', $test) ){
-        @return unitTest($test, $expected, "getBaseUserControlTemplate");
-    }
-    @else{
-        @return "getBaseUserControlTemplate : failure";
-    }
+    @return unitTest($test, $expected, "getBaseUserControlTemplate");
 }
 
 @function test_getHoverUserControlTemplate($control-template, $expected){
     $test : getHoverUserControlTemplate($control-template);
-
-    @if(isOfType('colorTemplate', $test)){
-        @return unitTest($test, $expected, "getHoverUserControlTemplate");
-    }
-    @else{
-        @return "getHoverUserControlTemplate : failure";
-    }
+    @return unitTest($test, $expected, "getHoverUserControlTemplate");
 }
 
 @function test_getFocusUserControlTemplate($control-template, $expected){
     $test : getFocusUserControlTemplate($control-template);
-
-    @if(isOfType('colorTemplate', $test)){
-        @return unitTest($test, $expected, "getFocusUserControlTemplate");
-    }
-    @else{
-        @return "getFocusUserControlTemplate : failure";
-    }
+    @return unitTest($test, $expected, "getFocusUserControlTemplate");
 }
 
 @function test_getActiveUserControlTemplate($control-template, $expected){
     $test : getActiveUserControlTemplate($control-template);
-
-    @if(isOfType('colorTemplate', $test)){
-        @return unitTest($test, $expected, "getActiveUserControlTemplate");
-    }
-    @else{
-        @return "getActiveUserControlTemplate : failure";
-    }
+    @return unitTest($test, $expected, "getActiveUserControlTemplate");
 }
 
 

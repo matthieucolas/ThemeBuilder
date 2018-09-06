@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run api && npm run config",
-    "api": "sass -c ./api-test.scss"
+    "build": "sass -c ./src/theme/theme.scss ./dist/theme.css",
+    "test": "npm run test:theme-api",
+    "test:theme-api": "sass -c ./tests/theme-api/test.scss"
   },
   "repository": {
     "type": "git",

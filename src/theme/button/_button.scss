@@ -1,0 +1,15 @@
+@import '../common/template';
+@import '../../theme-api/button';
+@import '../../theme-api/core';
+
+@mixin button($theme-config) {
+
+    .button{
+        $control-template : getButtonControlTemplate($theme-config, 'default');
+        $base: getBaseUserControlTemplate($control-template);
+
+        @include createColorTemplateBasics($base);
+    }
+
+    @debug "button mixin generated";
+}
