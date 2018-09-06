@@ -1,0 +1,19 @@
+@import '../unit-test';
+@import '../../src/theme-api/core/color-set';
+
+$color-set:colorSet(red, blue);
+
+@function test_colorSet_getBase($color-set, $expected){
+    $test : colorSet_getBase($color-set);
+    @return unitTest($test, $expected, 'colorSet_getBase should return #{$expected}');
+};
+
+@function test_colorSet_getVariant($color-set, $expected){
+    $test : colorSet_getVariant($color-set);
+    @return unitTest($test, $expected, 'colorSet_getVariant should return #{$expected}');
+};
+
+@debug '';
+@debug '== color-set unit tests ==========================================';
+@debug test_colorSet_getBase($color-set, red);
+@debug test_colorSet_getVariant($color-set, blue);

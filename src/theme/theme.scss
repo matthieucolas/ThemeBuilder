@@ -1,5 +1,4 @@
-@import './configuration/theme-configuration';
+@import './configuration/theme-config';
 @import './button/button';
 
-
-@include button($theme-configuration);
+@include button($theme-config);

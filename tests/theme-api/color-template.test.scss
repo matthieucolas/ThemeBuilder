@@ -1,31 +1,31 @@
 @import '../unit-test';
 @import '../../src/theme-api/core/color-template';
 
-@function test_getBackgroundColor($color-template, $expected){
-    $test: getBackgroundColor($color-template);
-    @return unitTest($test, $expected, "getBackgroundColor");
+@function test_colorTemplate_getBackground($color-template, $expected){
+    $test: colorTemplate_getBackground($color-template);
+    @return unitTest($test, $expected, "colorTemplate_getBackground");
 }
 
-@function test_getForegroundColor($color-template, $expected){
-    $test: getForegroundColor($color-template);
-    @return unitTest($test, $expected, "getForegroundColor");
+@function test_colorTemplate_getForeground($color-template, $expected){
+    $test: colorTemplate_getForeground($color-template);
+    @return unitTest($test, $expected, "colorTemplate_getForeground");
 }
 
-@function test_getBorderColor($color-template, $expected){
-    $test : getBorderColor($color-template);
-    @return unitTest($test, $expected, "getBorderColor");
+@function test_colorTemplate_getBorder($color-template, $expected){
+    $test : colorTemplate_getBorder($color-template);
+    @return unitTest($test, $expected, "colorTemplate_getBorder");
 }
 
-@function test_getOutlineColor($color-template, $expected){
-    $test : getOutlineColor($color-template);
-    @return unitTest($test, $expected, "getOutlineColor");
+@function test_colorTemplate_getOutline($color-template, $expected){
+    $test : colorTemplate_getOutline($color-template);
+    @return unitTest($test, $expected, "colorTemplate_getOutline");
 }
 
 $color-template : colorTemplate(red, green, blue, yellow);
 
 @debug '';
 @debug '== colorTemplate unit tests =========================================';
-@debug test_getBackgroundColor($color-template, red);
-@debug test_getForegroundColor($color-template, green);
-@debug test_getBorderColor($color-template, blue);
-@debug test_getOutlineColor($color-template, yellow);
+@debug test_colorTemplate_getBackground($color-template, red);
+@debug test_colorTemplate_getForeground($color-template, green);
+@debug test_colorTemplate_getBorder($color-template, blue);
+@debug test_colorTemplate_getOutline($color-template, yellow);

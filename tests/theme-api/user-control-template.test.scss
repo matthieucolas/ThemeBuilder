@@ -1,24 +1,24 @@
 @import '../unit-test';
 @import '../../src/theme-api/core/user-control-template';
 
-@function test_getBaseUserControlTemplate($control-template, $expected){
-    $test : getBaseUserControlTemplate($control-template);
-    @return unitTest($test, $expected, "getBaseUserControlTemplate");
+@function test_userControlTemplate_getBase($control-template, $expected){
+    $test : userControlTemplate_getBase($control-template);
+    @return unitTest($test, $expected, "userControlTemplate_getBase");
 }
 
-@function test_getHoverUserControlTemplate($control-template, $expected){
-    $test : getHoverUserControlTemplate($control-template);
-    @return unitTest($test, $expected, "getHoverUserControlTemplate");
+@function test_userControlTemplate_getHover($control-template, $expected){
+    $test : userControlTemplate_getHover($control-template);
+    @return unitTest($test, $expected, "userControlTemplate_getHover");
 }
 
-@function test_getFocusUserControlTemplate($control-template, $expected){
-    $test : getFocusUserControlTemplate($control-template);
-    @return unitTest($test, $expected, "getFocusUserControlTemplate");
+@function test_userControlTemplate_getFocus($control-template, $expected){
+    $test : userControlTemplate_getFocus($control-template);
+    @return unitTest($test, $expected, "userControlTemplate_getFocus");
 }
 
-@function test_getActiveUserControlTemplate($control-template, $expected){
-    $test : getActiveUserControlTemplate($control-template);
-    @return unitTest($test, $expected, "getActiveUserControlTemplate");
+@function test_userControlTemplate_getActive($control-template, $expected){
+    $test : userControlTemplate_getActive($control-template);
+    @return unitTest($test, $expected, "userControlTemplate_getActive");
 }
 
 
@@ -30,7 +30,7 @@ $control-template : userControlTemplate($base-color-template, $hover-color-templ
 
 @debug '';
 @debug '== userControlTemplate unit tests =================================================';
-@debug test_getBaseUserControlTemplate($control-template, $base-color-template);
-@debug test_getHoverUserControlTemplate($control-template, $hover-color-template);
-@debug test_getFocusUserControlTemplate($control-template, $focus-color-template);
-@debug test_getActiveUserControlTemplate($control-template, $active-color-template);
+@debug test_userControlTemplate_getBase($control-template, $base-color-template);
+@debug test_userControlTemplate_getHover($control-template, $hover-color-template);
+@debug test_userControlTemplate_getFocus($control-template, $focus-color-template);
+@debug test_userControlTemplate_getActive($control-template, $active-color-template);

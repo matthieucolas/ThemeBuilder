@@ -4,11 +4,18 @@
 
 @mixin button($theme-config) {
 
-    .button{
-        $control-template : getButtonControlTemplate($theme-config, 'default');
-        $base: getBaseUserControlTemplate($control-template);
-
-        @include createColorTemplateBasics($base);
+    .btn{
+        &--default{
+        
+            $control-template : buttonConfig_getTemplate($theme-config, 'default');
+            $base: userControlTemplate_getBase($control-template);
+            @include createColorTemplateBasics($base);
+        }
+        &--primary{
+            $control-template : buttonConfig_getTemplate($theme-config, 'primary');
+            $base: userControlTemplate_getBase($control-template);
+            @include createColorTemplateBasics($base);
+        }
     }
 
     @debug "button mixin generated";

@@ -1,16 +1,10 @@
-/// returns the configuration object which key is 'button'
-/// @access private
-/// @param {*} $theme-config 
+@import 'core/config';
 
-@function _getButtonConfig($theme-config){
-    @return map-get($map: $theme-config, $key: 'button');
-}
-
-/// retruns the mapping nested within the 'button' configuration mapping
+/// returns the mapping nested within the 'button' configuration mapping
 /// @access public
 /// @param {*} $theme-config 
 /// @param {*} $mapping-key 
 
-@function getButtonControlTemplate($theme-config, $mapping-key){
-    @return map-get($map: _getButtonConfig($theme-config), $key: $mapping-key);    
+@function buttonConfig_getTemplate($theme-config, $key){
+    @return map-get($map: config_getButton($theme-config), $key: $key);    
 }

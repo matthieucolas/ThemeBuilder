@@ -21,7 +21,7 @@
 $object : ('type':'testType');
 
 @debug '';
-@debug '== type unit tests ==========================================';
+@debug '== commmon unit tests ==========================================';
 @debug test_isOfType($object, 'testType', true);
 @debug test_isOfType($object, 'wrongTestType', false);
 @debug test_getTypeOf($object, 'testType');

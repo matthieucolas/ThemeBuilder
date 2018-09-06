@@ -1,7 +1,12 @@
-.button {
+.btn--default {
   background-color: red;
   color: blue;
   border-color: yellow;
+}
+.btn--primary {
+  background-color: pink;
+  color: green;
+  border-color: orange;
 }
 
 /*# sourceMappingURL=theme.css.map */

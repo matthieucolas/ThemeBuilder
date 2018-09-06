@@ -1,0 +1,28 @@
+@import './common';
+
+/// creates a mapping with two colors : basic color and variant color, 
+/// which can be usefull for state switching for instance  
+/// @param {*} $base 
+/// @param {*} $variant [null] 
+
+@function colorSet($base, $variant:null){
+    @return(
+        'type':'colorSet',
+        'base':$base,
+        'variant':$variant
+    )
+};
+
+/// returns the 'base' color nested whithin a colorSet object
+/// @param {colorSet} $color-set 
+
+@function colorSet_getBase($color-set){
+    @return map-get(typeCheck('colorSet', $color-set), 'base');
+}
+
+/// returns the 'variant' color nested whithin a colorSet object
+/// @param {colorSet} $color-set 
+
+@function colorSet_getVariant($color-set){
+    @return map-get(typeCheck('colorSet', $color-set), 'variant');
+}

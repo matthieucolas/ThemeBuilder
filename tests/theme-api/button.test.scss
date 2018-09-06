@@ -9,17 +9,11 @@ $theme-config:(
     'button':$button-mapping
 );
 
-@function test__getButtonConfig($theme-config, $expected){
-    $test: _getButtonConfig($theme-config);
-    @return unitTest($test, $expected, "getButtonConfig should return '$button-mapping' object");
-}
-
-@function test_getButtonControlTemplate($theme-config, $map-key, $expected){
-    $test: getButtonControlTemplate($theme-config, $map-key);
-    @return unitTest($test, $expected, "getButtonConfig should return '#{$expected}'");
+@function test_buttonConfig_getTemplate($theme-config, $map-key, $expected){
+    $test: buttonConfig_getTemplate($theme-config, $map-key);
+    @return unitTest($test, $expected, "buttonConfig_getTemplate should return '#{$expected}'");
 }
 
 @debug "";
 @debug "== test button ===========================================";
-@debug test__getButtonConfig($theme-config, $button-mapping);
-@debug test_getButtonControlTemplate($theme-config,'default', 'mapping');
+@debug test_buttonConfig_getTemplate($theme-config,'default', 'mapping');

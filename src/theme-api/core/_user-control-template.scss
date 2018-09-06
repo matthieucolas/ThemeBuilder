@@ -1,3 +1,5 @@
+@import './common';
+
 /// Creates a mapping for several user control template states
 /// @param {colorTemplate} $base [null] the base state of the control, must be of type colorTemplate
 /// @param {colorTemplate} $hover [null] the hover state of the control, must be of type colorTemplate
@@ -17,27 +19,27 @@
 /// Gets the base value from the control template mapping passed as a parameter
 /// @param {userControlTemplate} $control-template 
 
-@function getBaseUserControlTemplate($control-template){
+@function userControlTemplate_getBase($control-template){
     @return map-get(typeCheck('userControlTemplate', $control-template), 'base');
 }
 
 /// Gets the hover value from the control template mapping passed as a parameter
 /// @param {userControlTemplate} $control-template 
 
-@function getHoverUserControlTemplate($control-template){
+@function userControlTemplate_getHover($control-template){
     @return map-get(typeCheck('userControlTemplate', $control-template), 'hover');
 }
 
 /// Gets the focus value from the control template mapping passed as a parameter
 /// @param {userControlTemplate} $control-template 
 
-@function getFocusUserControlTemplate($control-template){
+@function userControlTemplate_getFocus($control-template){
     @return map-get(typeCheck('userControlTemplate', $control-template), 'focus');
 }
 
 /// Gets the active value from the control template mapping passed as a parameter
 /// @param {userControlTemplate} $control-template 
 
-@function getActiveUserControlTemplate($control-template){
+@function userControlTemplate_getActive($control-template){
     @return map-get(typeCheck('userControlTemplate', $control-template), 'active');
 }

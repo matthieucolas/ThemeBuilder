@@ -1,0 +1,19 @@
+@import '../unit-test';
+@import '../../src/theme-api/core/config';
+
+$button-mapping:(
+    'default':'mapping'
+);
+
+$theme-config:(
+    'button':$button-mapping
+);
+
+@function test_config_getButton($theme-config, $expected){
+    $test: config_getButton($theme-config);
+    @return unitTest($test, $expected, "config_getButton should return '$button-mapping' object");
+}
+
+@debug "";
+@debug "== test config ===========================================";
+@debug test_config_getButton($theme-config, $button-mapping);

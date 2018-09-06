@@ -2,9 +2,9 @@
 /// @param {colorTemplate} $color-template 
 
 @mixin createColorTemplateBasics($color-template){
-    $background: getBackgroundColor(typeCheck('colorTemplate', $color-template));
-    $color: getForegroundColor(typeCheck('colorTemplate', $color-template));
-    $border-color:getBorderColor(typeCheck('colorTemplate', $color-template));
+    $background: colorTemplate_getBackground(typeCheck('colorTemplate', $color-template));
+    $color: colorTemplate_getForeground(typeCheck('colorTemplate', $color-template));
+    $border-color:colorTemplate_getBorder(typeCheck('colorTemplate', $color-template));
 
     @include _colorBasic('background-color', $background);
     @include _colorBasic('color', $color);
