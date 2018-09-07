@@ -1,4 +1,4 @@
-@import '../../theme-api/core';
+@import '../../../theme-api/common';
 
 $button-config:(
     'default':userControlTemplate($base: colorTemplate(red, blue, yellow)),

@@ -1,0 +1,4 @@
+@import './configuration/aqvz/theme-config';
+@import './layout/layout';
+
+@include layout($theme-config);

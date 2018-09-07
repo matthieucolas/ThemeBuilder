@@ -1,0 +1,39 @@
+/// returns the configuration object which key is 'button'
+/// @access private
+/// @param {*} $theme-config 
+
+@function config_getButton($theme-config){
+    @return map-get($map: $theme-config, $key: 'button');
+}
+
+/// returns the configuration object which key is 'layout'
+/// @access private
+/// @param {*} $theme-config 
+
+@function config_getLayout($theme-config){
+    @return map-get($map: $theme-config, $key: 'layout');
+}
+
+/// returns the configuration object which key is $key
+/// @access private
+/// @param {*} $theme-config 
+
+@function config_getColor($theme-config, $key){
+    @return map-get($map: $theme-config, $key: $key);
+}
+
+/// returns the configuration object which key is ui
+/// @access public
+/// @param {*} $theme-config 
+
+@function config_getUiColor($key){
+    @return map-get($map: config_getColor('ui'), $key: $key);
+}
+
+/// returns the configuration object which key is 'alert'
+/// @access public
+/// @param {*} $theme-config 
+
+@function config_getAlertColor($key){
+    @return map-get($map: config_getColor('alert'), $key: $key);
+}

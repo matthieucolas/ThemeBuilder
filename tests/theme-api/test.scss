@@ -1,7 +1,9 @@
 @debug '== THEME API ========================================================';
-@import './common.test';
+@import './typing.test';
+@import './object.test';
 @import './color-template.test';
 @import './user-control-template.test';
+@import './layout-template.test';
 @import './config.test';
 @import './button.test';
 @import './color-set.test';

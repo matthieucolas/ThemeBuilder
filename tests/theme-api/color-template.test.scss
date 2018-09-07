@@ -1,5 +1,5 @@
 @import '../unit-test';
-@import '../../src/theme-api/core/color-template';
+@import '../../src/theme-api/common/color-template';
 
 @function test_colorTemplate_getBackground($color-template, $expected){
     $test: colorTemplate_getBackground($color-template);

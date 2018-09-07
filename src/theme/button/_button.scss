@@ -1,6 +1,5 @@
-@import '../common/template';
 @import '../../theme-api/button';
-@import '../../theme-api/core';
+@import '../../theme-api/common';
 
 @mixin button($theme-config) {
 

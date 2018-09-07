@@ -1,12 +1,11 @@
 
 @import '../unit-test';
-@import '../../src/theme-api/core/common';
+@import '../../src/theme-api/core/typing';
 
 @function test_isOfType($object, $type, $expected){
     $test : isOfType($type, $object);
     @return unitTest($test, $expected, 'isOfType should return #{$expected}');
 };
-
 
 @function test_getTypeOf($object, $expected){
     $test : getTypeOf($object);

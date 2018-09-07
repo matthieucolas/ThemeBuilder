@@ -1,0 +1,21 @@
+@import '../../theme-api/layout';
+@import '../../theme-api/common';
+
+@mixin layout($theme-config) {
+    $layout-template: layoutConfig_getTemplate($theme-config);
+    
+    .aqvz-banner{
+        $banner-template: layoutTemplate_getBanner($layout-template);
+        background-color: colorTemplate_getBackground($banner-template);
+    }
+
+    .aqvz-frame{
+        $frame-template: layoutTemplate_getFrame($layout-template);
+        background-color: colorTemplate_getBackground($frame-template);
+
+        &__aside{
+            $aside-template: layoutTemplate_getAside($layout-template);
+            background-color: colorTemplate_getBackground($aside-template);
+        }
+    }    
+}

@@ -1,21 +1,22 @@
 {
-  "name": "themebuilder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "sass -c ./src/theme/theme.scss ./dist/theme.css",
-    "test": "npm run test:theme-api",
-    "test:theme-api": "sass -c ./tests/theme-api/test.scss"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/matthieucolas/ThemeBuilder.git"
-  },
-  "author": "Matthieu Colas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/matthieucolas/ThemeBuilder/issues"
-  },
-  "homepage": "https://github.com/matthieucolas/ThemeBuilder#readme"
+    "name": "themebuilder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "npm run build:aqvz",
+        "test": "npm run test:theme-api",
+        "test:theme-api": "sass -c ./tests/theme-api/test.scss",
+        "build:aqvz": "sass -c ./src/theme/aqvz-theme-builder.scss ./dist/aqvz-theme.css"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/matthieucolas/ThemeBuilder.git"
+    },
+    "author": "Matthieu Colas",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/matthieucolas/ThemeBuilder/issues"
+    },
+    "homepage": "https://github.com/matthieucolas/ThemeBuilder#readme"
 }

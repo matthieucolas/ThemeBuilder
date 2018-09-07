@@ -1,0 +1,5 @@
+@import 'common/config';
+
+@function layoutConfig_getTemplate($theme-config){
+    @return config_getLayout($theme-config);    
+}

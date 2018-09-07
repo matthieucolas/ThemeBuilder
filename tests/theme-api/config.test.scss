@@ -1,19 +1,26 @@
 @import '../unit-test';
-@import '../../src/theme-api/core/config';
+@import '../../src/theme-api/common/config';
 
 $button-mapping:(
     'default':'mapping'
 );
 
 $theme-config:(
+    'layout':'layoutValue',
     'button':$button-mapping
 );
 
 @function test_config_getButton($theme-config, $expected){
     $test: config_getButton($theme-config);
-    @return unitTest($test, $expected, "config_getButton should return '$button-mapping' object");
+    @return unitTest($test, $expected, "config_getButton should return '$button-mapping'");
+}
+
+@function test_config_getLayout($theme-config, $expected){
+    $test: config_getLayout($theme-config);
+    @return unitTest($test, $expected, "config_getLayout should return '#{$expected}'");
 }
 
 @debug "";
 @debug "== test config ===========================================";
 @debug test_config_getButton($theme-config, $button-mapping);
+@debug test_config_getLayout($theme-config, 'layoutValue');

@@ -1,0 +1,36 @@
+@import '../unit-test';
+@import '../../src/theme-api/common/layout-template';
+
+@function test_layoutTemplate_getBanner($layout-template, $expected){
+    $test: layoutTemplate_getBanner($layout-template);
+    @return unitTest($test, $expected, "layoutTemplate_getBanner");
+}
+
+@function test_layoutTemplate_getFrame($layout-template, $expected){
+    $test: layoutTemplate_getFrame($layout-template);
+    @return unitTest($test, $expected, "layoutTemplate_getFrame");
+}
+
+@function test_layoutTemplate_getAside($layout-template, $expected){
+    $test : layoutTemplate_getAside($layout-template);
+    @return unitTest($test, $expected, "layoutTemplate_getAside");
+}
+
+@function test_layoutTemplate_getFooter($layout-template, $expected){
+    $test : layoutTemplate_getFooter($layout-template);
+    @return unitTest($test, $expected, "layoutTemplate_getFooter");
+}
+
+$banner: colorTemplate(red, blue, green);
+$frame: colorTemplate(yellow, black, pink);
+$aside: colorTemplate(violet, lightblue, lightgreen);
+$footer: colorTemplate(yellow, black, pink);
+
+$layout-template : layoutTemplate( $banner, $frame, $aside, $footer );
+
+@debug '';
+@debug '== layoutTemplate unit tests =========================================';
+@debug test_layoutTemplate_getBanner($layout-template, $banner);
+@debug test_layoutTemplate_getFrame($layout-template, $frame);
+@debug test_layoutTemplate_getAside($layout-template, $aside);
+@debug test_layoutTemplate_getFooter($layout-template, $footer);

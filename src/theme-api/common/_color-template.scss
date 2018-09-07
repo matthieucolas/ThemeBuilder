@@ -5,6 +5,13 @@
 /// @param {*} $border [null] 
 /// @param {*} $outline [null] 
 
+$IColorTemplate:(
+    'background',
+    'foreground',
+    'border',
+    'outline'
+);
+
 @function colorTemplate($background, $foreground: null, $border: null, $outline:null) {
     @return ( 'type':'colorTemplate',
               'background':   $background,
@@ -15,29 +22,30 @@
 }
 
 /// Returns the background value of the colorTemplate mapping passed as a parameter 
-/// @param {colorTemplate} $colorTemplate 
+/// @param {colorTemplate} $color-template 
 
-@function colorTemplate_getBackground($colorTemplate){
-    @return map-get($colorTemplate, 'background');
+@function colorTemplate_getBackground($color-template){
+    @return map-get($color-template, 'background');
 }
 
 /// Returns the foreground value of the colorTemplate mapping passed as a parameter 
-/// @param {colorTemplate} $colorTemplate 
+/// @param {colorTemplate} $color-template 
 
-@function colorTemplate_getForeground($colorTemplate){
-    @return map-get($colorTemplate, 'foreground');
+@function colorTemplate_getForeground($color-template){
+    @return map-get($color-template, 'foreground');
 }
 
 /// Returns the borderColor value of the colorTemplate mapping passed as a parameter 
-/// @param {colorTemplate} $colorTemplate 
+/// @param {colorTemplate} $color-template 
 
-@function colorTemplate_getBorder($colorTemplate){
-    @return map-get($colorTemplate, 'border');
+@function colorTemplate_getBorder($color-template){
+    @return map-get($color-template, 'border');
 }
 
 /// Returns the outline value of the colorTemplate mapping passed as a parameter 
-/// @param {colorTemplate} $colorTemplate 
+/// @param {colorTemplate} $color-template 
 
-@function colorTemplate_getOutline($colorTemplate){
-    @return map-get($colorTemplate, 'outline');
+@function colorTemplate_getOutline($color-template){
+    @return map-get($color-template, 'outline');
 }
+

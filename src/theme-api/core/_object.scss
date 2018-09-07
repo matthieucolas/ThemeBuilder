@@ -1,0 +1,13 @@
+
+/// Thows an error if $member-key is not part of $model members
+/// @param {*} $model 
+/// @param {*} $member-key 
+
+@function object_isMemberOf($model, $member-key){
+    @if(index($model, $member-key) != null){
+        @return $member-key;
+    }
+    @else{
+        @error '#{$member-key} is not member of #{$model}';
+    }
+}

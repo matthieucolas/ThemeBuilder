@@ -1,0 +1,7 @@
+@import '../../../theme-api/common';
+
+$layout-config : layoutTemplate(
+    $banner: colorTemplate($pale-grey, $ud-dark),
+    $frame: colorTemplate($suez-expert-blue, $ud-light),
+    $aside: colorTemplate($pale-grey-2, $ud-dark)
+);

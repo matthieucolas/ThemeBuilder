@@ -1,0 +1,9 @@
+@import './button-config';
+@import './color-config';
+@import './layout-config';
+
+$theme-config:(
+    'layout':$layout-config,
+    'button':$button-config,
+    'colors':$color-config
+)

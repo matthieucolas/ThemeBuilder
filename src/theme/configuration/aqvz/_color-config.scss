@@ -1,0 +1,25 @@
+@import '../../common/color-palette';
+
+// alerts
+$alert : (
+    'success':$ud-success,
+    'warning':$ud-warning,
+    'danger':$ud-danger,
+    'info':$ud-info
+);
+
+$ui:(
+    'primary':$ud-primary,
+    'primary-variant':$ud-primary-fo,
+    'secondary':$ud-secondary,
+    'secondary-variant':$ud-secondary-fo,
+    'default':$ud-default,
+    'light':$ud-light,
+    'medium':$ud-medium,
+    'dark':$ud-dark
+);
+
+$color-config:(
+    'alert':$alert,
+    'ui':$ui
+)

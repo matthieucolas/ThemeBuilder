@@ -1,5 +1,5 @@
 @import '../unit-test';
-@import '../../src/theme-api/core/user-control-template';
+@import '../../src/theme-api/common/user-control-template';
 
 @function test_userControlTemplate_getBase($control-template, $expected){
     $test : userControlTemplate_getBase($control-template);

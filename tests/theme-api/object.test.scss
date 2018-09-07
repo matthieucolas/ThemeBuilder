@@ -1,0 +1,25 @@
+
+@import '../unit-test';
+@import '../../src/theme-api/core/object';
+
+@function test_object_isMemberOf($model, $key, $expected){
+    $test : object_isMemberOf($model, $key);
+    @return unitTest($test, $expected, 'object_isMemberOf should return #{$expected}');
+};
+
+@function test_object_get($object, $member, $expected){
+    $test : object_get($object, $member);
+    @return unitTest($test, $expected, 'object_get should return #{$expected}');
+}
+
+$model : (
+    'member1',
+    'member2',
+    'member3'
+);
+
+@debug '';
+@debug '== object unit tests ==========================================';
+@debug test_object_isMemberOf($model, 'member1', 'member1');
+// throws a error (on purpose) :
+// @debug test_object_isMemberOf($model, 'not-a-member', null);

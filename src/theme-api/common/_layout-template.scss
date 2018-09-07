@@ -1,0 +1,49 @@
+@import '../core/typing';
+
+/// Creates a configuration mapping for the different parts of the layout
+/// @param {colorTemplate} $banner 
+/// @param {colorTemplate} $frame 
+/// @param {colorTemplate} $aside 
+/// @param {colorTemplate} $footer [null] 
+
+@function layoutTemplate($banner, $frame, $aside, $footer:null){
+    @return (
+        'type':'layoutTemplate',
+        'banner':typeCheck('colorTemplate', $banner),
+        'frame':typeCheck('colorTemplate', $frame),
+        'aside':typeCheck('colorTemplate', $aside),
+        'footer':typeCheck('colorTemplate', $footer)
+    )
+};
+
+/// Returns the banner value of the colorTemplate mapping passed as a parameter 
+/// @param {layoutTemplate} $layout-template 
+/// @return {colorTemplate} a colorTemplate object corresponding to the banner
+
+@function layoutTemplate_getBanner($layout-template){
+    @return map-get($map: typeCheck('layoutTemplate', $layout-template), $key: 'banner');
+};
+
+/// Returns the frame value of the colorTemplate mapping passed as a parameter 
+/// @param {layoutTemplate} $layout-template 
+/// @return {colorTemplate} a colorTemplate object corresponding to the frame
+
+@function layoutTemplate_getFrame($layout-template){
+    @return map-get($map: typeCheck('layoutTemplate', $layout-template), $key: 'frame');
+};
+
+/// Returns the aside value of the colorTemplate mapping passed as a parameter 
+/// @param {layoutTemplate} $layout-template 
+/// @return {colorTemplate} a colorTemplate object corresponding to the aside
+
+@function layoutTemplate_getAside($layout-template){
+    @return map-get($map: typeCheck('layoutTemplate', $layout-template), $key: 'aside');
+};
+
+/// Returns the footer value of the colorTemplate mapping passed as a parameter 
+/// @param {layoutTemplate} $layout-template 
+/// @return {colorTemplate} a colorTemplate object corresponding to the footer
+
+@function layoutTemplate_getFooter($layout-template){
+    @return map-get($map: typeCheck('layoutTemplate', $layout-template), $key: 'footer');
+};
